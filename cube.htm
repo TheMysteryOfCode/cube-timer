@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="CubeTimer%20-%20Online%20Rubik's%20Cube%20Timer%20by%20Ruwix_files/jquery-1.js"></script>
+	<link href="CubeTimer%20-%20Online%20Rubik's%20Cube%20Timer%20by%20Ruwix_files/css.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="CubeTimer%20-%20Online%20Rubik's%20Cube%20Timer%20by%20Ruwix_files/timer.css">
+	<title>CubeTimer - Online Rubik's Cube Timer by Ruwix</title>
+	
+	
+<link id="load-css-0" rel="stylesheet" type="text/css" href="CubeTimer%20-%20Online%20Rubik's%20Cube%20Timer%20by%20Ruwix_files/util.css"><link id="load-css-1" rel="stylesheet" type="text/css" href="CubeTimer%20-%20Online%20Rubik's%20Cube%20Timer%20by%20Ruwix_files/tooltip.css"></head>
+<body id="design" class="theme2">
+	<div id="stackmatTimer">
+		<div id="test">
+			<div id="fontFamily" class="font7">
+				<div id="visiblePanels" class="panel1 panel2 panel3 panel4 panel5 panel6">
+					<div id="timerOptionWhatToHide" class="HidePanelsWhileTiming">
+						<div id="segedvaltozo">
+						</div>
+						<div id="pagewrap" style="min-height: 908px;">		
+							<header>
+								<div class="headertoolbar">
+									<br><br>
+
+									
+									<a id="scrambleSettings" title="Scramble Settings">
+									</a>
+								<div class="clearboth"></div>			
+								</div>
+							</header>
+							<section>
+								<div id="wrapScrambleAlgorithm">
+									<div id="scrambleAlgorithm">R' B' F L B' D2 L2 F2 D L' D L2 B2 F' D B R U2 R' L' </div>
+								</div>
+								<a id="touchSensitive" title="Pres Space or click here to start!">
+									<div class="divTable">
+										<div class="divTableBody">
+											<div class="divTableRow">
+												<div class="divTableCell timerHandCell">
+													<div class="timerHand">
+														<img src="CubeTimer%20-%20Online%20Rubik's%20Cube%20Timer%20by%20Ruwix_files/hand-left.png" alt="left hand">
+													</div>
+												</div>
+												<div class="divTableCell">
+													<div id="timeWrap">
+														<div id="time">
+															 <span><span> </span><span>0</span></span>.<span><span>0</span><span>0</span></span>
+														</div>
+														<div class="textWhenTimerIsHiddenWhileTiming">
+															Timing
+														</div>
+														<div id="stackmatLeds">
+															<div id="redLed"></div>
+															<div id="greenLed"></div>
+														</div>
+													</div>
+													<div id="alertMessage">
+													</div>
+												</div>
+												<div class="divTableCell textAlignRight timerHandCell">
+													<div class="timerHand">
+														<img src="CubeTimer%20-%20Online%20Rubik's%20Cube%20Timer%20by%20Ruwix_files/hand-right.png" alt="right hand">
+													</div>						
+												</div>
+											</div>
+										</div>
+									</div>
+								</a>								
+								<div id="wrapStatistics">
+									<div id="wrapSolutoinTimes">
+										<div class="panelTitle">
+											Times
+										</div>
+										<div class="panelInner">
+											<div id="solutionTimes">
+											</div>
+											
+											
+										</div>
+									</div>									
+									<div id="solutionStatistics">
+										<div class="panelTitle">
+											Statistics
+										</div>
+										<div class="panelInner">
+											<ul>
+												<li><a title="The smallest solution time"><em>Best: </em><span id="statBest"><span class="placeHolder"><span><span> </span><span>0</span></span>.<span><span>0</span><span>0</span></span></span></span></a></li>
+												<li><a title="The biggest solution time"><em>Worst: </em><span id="statWorst"><span class="placeHolder"><span><span> </span><span>0</span></span>.<span><span>0</span><span>0</span></span></span></span></a></li>
+												<li><a title="Average of all solution times"><em>Average: </em><span id="statAvg"><span class="placeHolder"><span><span> </span><span>0</span></span>.<span><span>0</span><span>0</span></span></span></span></a></li>
+												<li><a title="The time situated in the middle when times are in increasing order"><em>Median: </em><span id="statMedian"><span class="placeHolder"><span><span> </span><span>0</span></span>.<span><span>0</span><span>0</span></span></span></span></a></li>
+												<li><a title="Standard Deviation"><em>S Deviation: </em><span id="statSDeviation"><span class="placeHolder"><span><span> </span><span>0</span></span>.<span><span>0</span><span>0</span></span></span></span></a></li>
+												<li><a title="Average of the last 5 times"><em>Avg 5: </em><span id="statAvgLast5"><span class="placeHolder"><span><span> </span><span>0</span></span>.<span><span>0</span><span>0</span></span></span></span></a></li>
+												<li><a title="Mean of the last 5 times, not counting the best and worst results"><em>3 of 5: </em><span id="statLast3of5"><span class="placeHolder"><span><span> </span><span>0</span></span>.<span><span>0</span><span>0</span></span></span></span></a></li>
+												<li><a title="The best 3 of 5 consecutive times, not counting the best and worst results"><em>Best 3 of 5: </em><span id="statBest3of5"><span class="placeHolder"><span><span> </span><span>0</span></span>.<span><span>0</span><span>0</span></span></span></span></a></li>
+												<li><a title="Average of the last 10 times"><em>Avg 12: </em><span id="statAvgLast12"><span class="placeHolder"><span><span> </span><span>0</span></span>.<span><span>0</span><span>0</span></span></span></span></a></li>
+												<li><a title="Mean of the last 12 times, not counting the best and worst results"><em>10 of 12: </em><span id="statLast10of12"><span class="placeHolder"><span><span> </span><span>0</span></span>.<span><span>0</span><span>0</span></span></span></span></a></li>
+												<li><a title="The best 10 of 12 consecutive times, not counting the best and worst results"><em>Best 10 of 12: </em><span id="statBest10of12"><span class="placeHolder"><span><span> </span><span>0</span></span>.<span><span>0</span><span>0</span></span></span></span></a></li>
+											</ul>
+										</div>
+									</div>
+									<div id="performanceGraph">
+										<div class="panelTitle">
+											Graph
+										</div>
+										<div class="panelInner">
+											<div id="gugliGrafikon"><div style="position: relative;"><div style="position: relative; width: 300px; height: 200px;" dir="ltr"><div style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;" aria-label="A chart."><svg width="300" height="200" style="overflow: hidden;" aria-label="A chart."><defs id="defs"><clipPath id="_ABSTRACT_RENDERER_ID_0"><rect x="58" y="38" width="185" height="124"></rect></clipPath></defs><rect x="0" y="0" width="300" height="200" stroke="none" stroke-width="0" fill="#333333"></rect><g><rect x="58" y="38" width="185" height="124" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect><g clip-path="url(https://ruwix.com/online-rubiks-stopwatch-timer/?des=2&amp;font=7#_ABSTRACT_RENDERER_ID_0)"><g><rect x="58" y="38" width="1" height="124" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="95" y="38" width="1" height="124" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="132" y="38" width="1" height="124" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="168" y="38" width="1" height="124" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="205" y="38" width="1" height="124" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="242" y="38" width="1" height="124" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="58" y="161" width="185" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="58" y="130" width="185" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="58" y="100" width="185" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="58" y="69" width="185" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect><rect x="58" y="38" width="185" height="1" stroke="none" stroke-width="0" fill="#cccccc"></rect></g><g><rect x="58" y="38" width="1" height="124" stroke="none" stroke-width="0" fill="#333333"></rect><rect x="58" y="161" width="185" height="1" stroke="none" stroke-width="0" fill="#333333"></rect></g></g><g></g><g><g><text text-anchor="middle" x="58.5" y="176.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#444444">0.0</text></g><g><text text-anchor="middle" x="95.30000000000001" y="176.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#444444">0.2</text></g><g><text text-anchor="middle" x="132.10000000000002" y="176.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#444444">0.4</text></g><g><text text-anchor="middle" x="168.90000000000003" y="176.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#444444">0.6</text></g><g><text text-anchor="middle" x="205.70000000000002" y="176.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#444444">0.8</text></g><g><text text-anchor="middle" x="242.5" y="176.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#444444">1.0</text></g><g><text text-anchor="end" x="48" y="165" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#444444">0.00</text></g><g><text text-anchor="end" x="48" y="134.25" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#444444">0.25</text></g><g><text text-anchor="end" x="48" y="103.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#444444">0.50</text></g><g><text text-anchor="end" x="48" y="72.75" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#444444">0.75</text></g><g><text text-anchor="end" x="48" y="42" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#444444">1.00</text></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th>Id</th><th>Time</th></tr></thead><tbody></tbody></table></div></div></div><div style="display: none; position: absolute; top: 210px; left: 310px; white-space: nowrap; font-family: Arial; font-size: 10px;" aria-hidden="true">...</div><div></div></div></div>
+										</div>
+									</div>				
+									
+								</div>
+								
+							</section>
+							<div class="wrapAlertBox" id="scrambleSettingsWrap">
+								<div class="alertBox">
+									<div id="alertBoxClose2" class="alertBoxClose" title="Close">×</div>
+									<div class="alertBoxInner clearfix">
+										<h3>Puzzle</h3>
+										<div id="settingsContainer">
+											<div id="cubetype">3x3x3</div>
+											<div id="typedropdownwrap">
+												<div id="typedropdown">
+<a id="dropid1">2x2x2</a>
+<a id="dropid2">3x3x3</a>
+<a id="dropid3">4x4x4</a>
+<a id="dropid4">5x5x5</a>
+<a id="dropid5">6x6x6</a>
+<a id="dropid6">7x7x7</a>
+<a id="dropid11">Square-1</a>
+<a id="dropid12">R's Clock</a>
+<a id="dropid13">Megaminx</a>
+<a id="dropid14">Pyraminx</a>
+<a id="dropid15">Skewb</a>
+												</div>
+											</div>
+										</div>
+										<h3>Inspection</h3>
+										<div id="inspectionOptions" class="selectOptions">
+<div id="inspection1" class="activeOption">Off</div>
+<div id="inspection5">WCA</div>
+&nbsp;&nbsp;&nbsp;&nbsp;Auto&nbsp;start: 
+<div id="inspection2">3 s</div>
+<div id="inspection3">10 s</div>
+<div id="inspection4">15 s</div>
+										</div>										
+										<h3>Timer Options</h3>
+										<div id="timerOptions" class="selectOptions">
+<div id="topt1" class="activeOption">Hide panels while timing</div>
+<div id="topt2">Hide time while timing</div>
+<div id="topt3">Erase times after the 5th</div>
+<div id="topt4" class="activeOption">Play sounds</div>
+										</div>										
+										<h3>Scramble Settings</h3>
+										<div id="scrambleSettingsList">
+<div id="scrlength"><div>Length</div><input id="lengthvalue" maxlength="3" size="3" name="num" value="20"></div>
+<div id="separatecheck">Separate</div>
+<div id="orientcheck">Orient</div>
+<div id="megacolorscheme" style="display: none;"><div>CS</div><input onblur='jQuery("#megacolorshelp").hide();' onfocus='jQuery("#megacolorshelp").fadeIn();' id="mxcolors" onchange="updatemxcolor();" maxlength="12" size="12" name="num" value="abdcefghijkl"></div>
+<div id="fruonly">FRU Only</div>
+<div id="scramblebutton">Scramble</div>
+										</div>										
+										<div id="megacolorshelp">
+<h3>Megaminx Color Scheme</h3>
+<div>a</div><div>b</div><div>c</div><div>d</div><div>e</div><div>f</div><div>g</div><div>h</div><div>i</div><div>j</div><div>k</div><div>l</div><div>m</div><div>n</div><div>o</div>	
+										</div>
+										<h3>Design</h3>
+										<div id="themeStackmatOption" class="selectOptions">
+											<div id="useStackmat">
+												Stackmat Timer
+											</div>
+										</div>
+										<div id="themeOption" class="selectOptions">
+<div id="theme1" class="">Bright</div>
+<div id="theme3">Grey</div>
+<div id="theme2" class="activeOption">Dark</div>
+<div id="theme5">Rubik's</div>
+<div id="theme6">Toilet Paper</div>
+										</div>
+										<h3>Dock Panels</h3>
+										<div id="panelOptions" class="selectOptions">
+<div id="panel1" class="activeOption">Scramble</div>
+<div id="panel2" class="activeOption">Hands</div>
+<div id="panel3" class="activeOption">Times</div>
+<div id="panel4" class="activeOption">Statistics</div>
+<div id="panel5" class="activeOption">Graph</div>					
+<div id="panel6" class="activeOption">Scramble Image</div>		
+<div id="panel7">Settings</div>
+<div id="panel8">Help</div>
+										</div>										
+										<h3 id="fontsHeader">Stopwatch Font</h3>
+										<div id="timerFont" class="selectOptions">
+<div id="font1">Arial</div>
+<div id="font2" class="">Impact</div>
+<div id="font3">LCD</div>
+<div id="font4">LCD 2</div>					
+<div id="font5" class="">Orbitron</div>
+<div id="font6">Lucida</div>
+<div id="font7" class="activeOption">Comic Sans</div>
+										</div>										
+										<h3>Save Settings to URL</h3>
+										<div id="saveSettingWrap">											
+											<div id="savedSettingsGeneratedText">
+											</div>
+											<input type="text" name="savedLink" id="savedLink">
+											<a class="smallButton" id="saveSettings" title="Generate Custom Link With My Settings">Update Link</a>
+											<a class="smallButton" title="Open Link In New Tab" id="openSavedLink" target="_blank" href="https://ruwix.com/">Open Link</a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="article">
+								<div id="closeArticle" class="alertBoxClose">
+									×
+								</div>
+<h1>Online Rubik's Cube Stopwatch Timer</h1>
+<p><strong>Online Rubik's Cube speedsolving timer with built-in scramble generator for <abbr title="World Cube Association">WCA</abbr>
+ twisty puzzles. The stopwatch collects and analizes training 
+statistics, calculates averages for 5 and 12 times and shows the 
+evolution of performance on a graphical display. Inspection time, 
+customizable design and various other options help you enjoy your puzzle
+ practice. Save your times and statistics to the cloud or in a text 
+file. Export your preferred settings and save them in a custom link.</strong></p>
+<p><strong>The Cube Timer adjusts itself to the current screen size, 
+supports keyboard, mouse and touchscreens working great both on desktop 
+and mobile devices.</strong></p>
+<h2>How To Use?</h2>
+<p>Press the space button on your keyboard or click/touch the main timer
+ until the green light indicates that the timer is ready to start. 
+Release the key and press it again to stop the counter when you finished
+ the solution. Add +2 or <abbr title="Did Not Finish">DNF</abbr> penalties, according to official WCA regulations if necessary.</p>
+<h2>Settings</h2>
+<p>Click the gear icon in the upper corner of the screen to access the 
+settings panel. Select the puzzle you're practicing with and the puzzle 
+scrambler will generate a random scramble according to this setting. 
+Customize scramble options setting a custom length (number of 
+rotations), initial orientation, separate the string for a better 
+readability or set it to use the F R U rotations only. These general 
+scramble options wary depending on the selected puzzle.   </p>
+<p>Turn on the inpection time to delay the timer with 3, 10 or 15 seconds. </p>
+<h2>Customizing the Design</h2>
+<p>Customize the look of the timer choosing from the available designs. 
+Select the color theme, activate the Stackmat timer or change the font. </p>
+<p>Choose to hide certain interface panels while the timer is running or
+ hide the timer itself and reveal the result only when the timer has 
+stopped. Set the program to clear the recorded results after every five 
+measurements.</p>
+<h2>Save Your Times and Statistics</h2>
+<p>You can save your times and statistics to our database or export them
+ in text format which you can later import. Look for the Import and 
+Export icons below the session time list.</p>
+<p>To save to the database all you have to do is specify a name and 
+click the save button. Use later the same name to retreive your 
+settings. Try to use a unique name to make sure nobody will overwrite 
+your data using the same name. </p>
+<p>Another way of saving your times is exporting them to a text file. 
+You can choose to save only the times or full statistics, including the 
+scrambles, penalties and comments for each time.  </p>
+<h2>Save the Settings</h2>
+<p>Find the save icon in the upper corner of the settings panel. This 
+can generate a custom link which contains your current settings. Save or
+ bookmark this URL and access the website with your custom link to load 
+your preferred setup by default. </p>
+<h2>Privacy Policy and use of Cookies</h2>
+<p>This website is using third party cookies to collect anonymous 
+visitor analytics (Google Analytics) and to show personalized ads 
+(AdSense). We use cookies to detect visitors who come to the site for 
+the first time. Users might save their times, scrambles and notes to our
+ database, identified by a nickname.</p>
+<hr>
+								
+							</div>
+						</div>
+						<div class="wrapAlertBox" id="timeInformation">
+							<div class="alertBox">
+								<div id="alertBoxClose" class="alertBoxClose" title="Close">×</div>
+								<div class="alertBoxInner clearfix">
+									<div class="divTable">
+										<div class="divTableBody">
+											<div class="divTableRow">
+												<div class="divTableCell">Time:</div>
+												<div class="divTableCell"><span id="timeTime"> </span><span id="currentTimeMS"></span></div>
+											</div>
+											<div class="divTableRow">
+												<div class="divTableCell">Comment:</div>
+												<div class="divTableCell"><input name="timeComment" id="timeComment" type="text" maxlength="80"></div>
+											</div>
+											<div class="divTableRow">
+												<div class="divTableCell">Puzzle:</div>
+												<div class="divTableCell"><span id="timePuzzle"> </span></div>
+											</div>
+											<div class="divTableRow">
+												<div class="divTableCell">Scramble:</div>
+												<div class="divTableCell"><span id="timeScramble"> </span></div>
+											</div>
+											<div class="divTableRow">
+												<div class="divTableCell">Penalties:</div>
+												<div class="divTableCell"><span id="plus2penalty"></span><span id="dnfpenalty"></span></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="wrapAlertBox" id="importFromFile">
+							<div class="alertBox">
+								<div id="alertBoxCloseImport" class="alertBoxClose" title="Close">×</div>
+								<div class="alertBoxInner clearfix">
+									<h2>Import times</h2>
+									<hr>
+									<h3>Import from the Cloud</h3>
+									<div class="userNameWrap">
+										Username: <input name="userName2" id="userName2" type="text">
+										<a class="smallButton" title="Open" id="openUserTimes">Open</a>
+										<div class="saveTimesLabel">Type the name you used for saving.</div>
+									</div>
+									<hr>
+									<div id="importError">
+										<strong>Import aborted because some entries are not formatted correctly!</strong>
+										<div id="importErrorMessage">
+										</div>
+									</div>
+									<h3>Export (text format)</h3>
+									<div class="divTable">
+										<div class="divTableBody">
+											<div class="divTableRow">
+												<div class="divTableCell">
+													<h3>Times only</h3>
+													<textarea rows="4" cols="50" id="importTextareaSimple"></textarea>
+													<a class="smallButton" title="Import time list" id="importTextareaSimpleButton">Import</a>
+													<div>Add each time in new line in this format:</div>
+													<div class="sampleTimeFormats"><em>01 02:03.04<br>12:34.56<br>12.34<br>4.73<br>0.09</em></div>
+												</div>
+												<div class="divTableCell">
+													<h3>Full statistics</h3>
+													<textarea rows="4" cols="50" id="importTextareaJson"></textarea> 
+													<a class="smallButton" title="Import time list" id="importTextareaJsonButton">Import</a>
+													<div>Paste here an export generated with this timer.</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="wrapAlertBox" id="exportToFile">
+							<div class="alertBox">
+								<div id="alertBoxCloseExport" class="alertBoxClose" title="Close">×</div>
+								<div class="alertBoxInner clearfix">
+									<h2>Save times</h2>
+									<hr>
+									<h3>Save to the Cloud</h3>
+									<div class="userNameWrap">
+										Username: <input name="userName" id="userName" type="text">
+										<a class="smallButton" title="Save" id="saveUserTimes">Save</a>
+										<div id="saveWarningText">&nbsp;</div>
+										<div class="saveTimesLabel"><span id="saveLimitWarning"><br></span>Use a unique name others can't guess. Stored for one month.</div>
+									</div>									
+									<hr>
+									<h3>Export (text format)</h3>									
+									<div class="divTable">
+										<div class="divTableBody">
+											<div class="divTableRow">
+												<div class="divTableCell">
+													<h3>Times only</h3>
+													<textarea rows="4" cols="50" id="exportedTextareaSimple" readonly="readonly"></textarea> 
+												</div>
+												<div class="divTableCell">
+													<h3>Full statistics (scrambles, comments etc.)</h3>
+													<textarea rows="4" cols="50" id="exportedTextareaJson" readonly="readonly"></textarea> 
+												</div>
+											</div>
+										</div>
+									</div>
+									Copy the text above and save the content to a text file. You can import them later.
+								</div>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="myCookieConsent">
+		<a id="cookieButton">OK</a>
+		
+	</div>
+	<script src="CubeTimer%20-%20Online%20Rubik's%20Cube%20Timer%20by%20Ruwix_files/timer.js"></script> 
+	<script async="" src="CubeTimer%20-%20Online%20Rubik's%20Cube%20Timer%20by%20Ruwix_files/js"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'UA-31683673-1');
+	</script><script type="text/javascript" src="CubeTimer%20-%20Online%20Rubik's%20Cube%20Timer%20by%20Ruwix_files/jsapi_compiled_format_module.txt"></script><script type="text/javascript" src="CubeTimer%20-%20Online%20Rubik's%20Cube%20Timer%20by%20Ruwix_files/jsapi_compiled_default_module.txt"></script><script type="text/javascript" src="CubeTimer%20-%20Online%20Rubik's%20Cube%20Timer%20by%20Ruwix_files/jsapi_compiled_ui_module.txt"></script><script type="text/javascript" src="CubeTimer%20-%20Online%20Rubik's%20Cube%20Timer%20by%20Ruwix_files/jsapi_compiled_corechart_module.txt"></script>
+
+</body></html>
